@@ -1,4 +1,4 @@
-<html><head><title>Nos Services - AgenceDigitale</title>
+<html><head><title>Nos Services - Platinium-services</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Découvrez nos services de création de sites web, conception graphique, marketing digital, SEO, SMO, publicité en ligne, montage vidéo et 3D.">
@@ -59,13 +59,13 @@
             text-decoration: none;
         }
 
-        #logo-image {
+        .logo-image {
             width: 60px;
             height: 60px;
             margin-right: 10px;
         }
 
-        #logo-text {
+        .logo-text {
             display: inline-block;
         }
 
@@ -89,17 +89,52 @@
             color: var(--secondary-color);
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            color: var(--light-text);
-            cursor: pointer;
-        }
-
         .services {
             padding-top: 100px;
         }
 
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+          }
+        
+          .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--light-text);
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+          }
+        
+          .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            min-height: 85vh;
+            height: auto;
+            display: flex;
+            align-items: center;
+            color: var(--light-text);
+            text-align: center;
+            padding: 100px 0 50px;
+          }
+        
+          .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+          }
+        
+          .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+          }
+        
+          .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+          }
+
+        
         .section-title {
             font-size: 2.5rem;
             text-align: center;
@@ -381,8 +416,32 @@
                 bottom: 10px;
                 left: 10px;
             }
+        
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+          }
+      
+          .nav-links.active {
+            display: flex;
+          }
+      
+          .nav-links li {
+            margin: 10px 0;
+          }
+      
+          .hamburger {
+            display: block;
+          }
         }
-
+        
         @media (max-width: 480px) {
             .pricing-card {
                 width: 100%;
@@ -398,26 +457,33 @@
 <body>
     <header>
         <nav class="container">
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <a href="index.html" class="logo">
-                <img src="img/logo.png" alt="AgenceDigitale Logo" id="logo-image">
-                <span id="logo-text">Platinium services</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="service.html" class="active">Services</a></li>
-                <li><a href="apropos.html">À propos</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-            </ul>
+          <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="Platinium logo" height="60">
+            Platinium
+          </a>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
     <main>
+        <section class="hero">
+            <div class="hero-content">
+              <h1>Nos Services</h1>
+              <p>Chez AgenceDigitale, nous offrons une gamme complète de services digitaux pour propulser votre entreprise vers de nouveaux sommets.</p>
+            </div>
+          </section>
         <section class="services">
             <div class="container">
-                <h1 class="section-title">Nos Services</h1>
-                <p class="section-description">Chez AgenceDigitale, nous offrons une gamme complète de services digitaux pour propulser votre entreprise vers de nouveaux sommets. De la création de sites web à la conception graphique, en passant par le marketing digital, nous avons les solutions pour transformer votre présence en ligne.</p>
+                <p class="section-description"></p>
                 <div class="services-container">
                     <div class="services-column design">
                         <h2 class="column-title">Design</h2>
@@ -525,7 +591,7 @@
                     <div class="cards-container">
                         <div class="pricing-card">
                             <h3>Création de site web</h3>
-                            <p class="price">À partir de 1500€</p>
+                            <p class="price">À partir de 40.000f</p>
                             <ul>
                                 <li>Design personnalisé</li>
                                 <li>Responsive</li>
@@ -534,7 +600,7 @@
                         </div>
                         <div class="pricing-card">
                             <h3>Conception graphique</h3>
-                            <p class="price">À partir de 500€</p>
+                            <p class="price">À partir de 5.000fr</p>
                             <ul>
                                 <li>Logo</li>
                                 <li>Charte graphique</li>
@@ -543,7 +609,7 @@
                         </div>
                         <div class="pricing-card">
                             <h3>Montage Vidéo et 3D</h3>
-                            <p class="price">À partir de 800€/projet</p>
+                            <p class="price">À partir de 8.000fr </p>
                             <ul>
                                 <li>Montage vidéo</li>
                                 <li>Animations 2D/3D</li>
@@ -552,7 +618,7 @@
                         </div>
                         <div class="pricing-card">
                             <h3>Marketing digital</h3>
-                            <p class="price">À partir de 800€/mois</p>
+                            <p class="price">À partir de 35.000fr</p>
                             <ul>
                                 <li>SEO</li>
                                 <li>Campagnes publicitaires</li>
@@ -561,7 +627,7 @@
                         </div>
                         <div class="pricing-card">
                             <h3>Gestion réseaux sociaux</h3>
-                            <p class="price">À partir de 600€/mois</p>
+                            <p class="price">À partir de 25.000fr/mois</p>
                             <ul>
                                 <li>Création de contenu</li>
                                 <li>Gestion de communauté</li>
@@ -570,7 +636,7 @@
                         </div>
                         <div class="pricing-card">
                             <h3>Services de boostage</h3>
-                            <p class="price">À partir de 300€/campagne</p>
+                            <p class="price">À partir de 15.000fr/campagne</p>
                             <ul>
                                 <li>Boost de publications</li>
                                 <li>Campagnes ciblées</li>
@@ -579,7 +645,7 @@
                         </div>
                         <div class="pricing-card">
                             <h3>Formations marketing digital</h3>
-                            <p class="price">À partir de 400€/session</p>
+                            <p class="price">Prix variant</p>
                             <ul>
                                 <li>Ateliers pratiques</li>
                                 <li>Formations personnalisées</li>
@@ -601,19 +667,18 @@
                 <div class="footer-section">
                     <h3>Liens Rapides</h3>
                     <ul class="footer-links">
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">À propos</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="apropos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contactez-nous</h3>
-                    <p>Email: contact@agencedigitale.com</p>
-                    <p>Téléphone: +33 1 23 45 67 89</p>
-                    <p>Adresse: 123 Rue du Digital, 75001 Paris</p>
+                    <p>Email: platiniumservices@gmail.com</p>
+                    <p>Téléphone: +226 65 61 55 60</p>
                 </div>
             </div>
-            <p>&copy; 2023 AgenceDigitale. Tous droits réservés.</p>
+            <p>&copy; 2024 Platinium-services. Tous droits réservés.</p>
         </div>
     </footer>
     <div class="contact-buttons">
@@ -655,11 +720,17 @@
                 });
             });
 
-            const menuToggle = document.getElementById('menuToggle');
+            const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
-
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('show');
+        
+            hamburger.addEventListener('click', () => {
+              navLinks.classList.toggle('active');
+            });
+        
+            document.querySelectorAll('.nav-links a').forEach(link => {
+              link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+              });
             });
 
             const contactButtons = document.querySelectorAll('.contact-button');
