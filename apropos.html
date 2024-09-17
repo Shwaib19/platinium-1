@@ -1,0 +1,487 @@
+<html><head><title>À propos - AgenceDigitale</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez l'histoire, les valeurs et l'équipe derrière AgenceDigitale, votre partenaire en transformation digitale.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #E74C3C;
+            --accent-color: #ECF0F1;
+            --text-color: #333;
+            --light-text: #FFF;
+            --background-color: #F5F5F5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        #logo-image {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        #logo-text {
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .active {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--light-text);
+            cursor: pointer;
+        }
+
+        .hero-section {
+            background-image: url('https://source.unsplash.com/random/1600x900/?digital,agency');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+        }
+
+        .about-section {
+            padding: 50px 0;
+            flex: 1 0 auto;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: var(--primary-color);
+        }
+
+        .history-content {
+            background-color: var(--accent-color);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .history-content p {
+            margin-bottom: 20px;
+        }
+
+        .history-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .expertise-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .expertise-item {
+            flex-basis: calc(50% - 20px);
+            background-color: var(--accent-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .expertise-item i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .expertise-item h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .testimonial {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-section {
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #1a252f;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 50px 0;
+            margin-top: 50px;
+            flex-shrink: 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1 1 300px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .contact-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #c0392b;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 20px 0;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .expertise-item {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="AgenceDigitale Logo" id="logo-image">
+                <span id="logo-text">Platinium services</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="apropos.html" class="active">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">À propos d'AgenceDigitale</h1>
+                <p class="hero-tagline">Votre partenaire de confiance pour tous vos projets digitaux</p>
+            </div>
+        </section>
+        <section class="about-section">
+            <div class="container">
+                <h2>Notre Histoire</h2>
+                <div class="history-content">
+                    <p>AgenceDigitale est née de la passion et de l'ambition d'un groupe d'étudiants talentueux. Notre parcours a débuté en 2022 lorsque nous nous sommes rencontrés à l'université, partageant un intérêt commun pour le digital et l'innovation.</p>
+                    <p>Pendant un an, nous avons collaboré sur divers projets universitaires, affinant nos compétences et découvrant notre synergie collective. Cette période nous a permis de développer une expertise variée dans les domaines du développement web, du design graphique, du montage 3D et du marketing digital.</p>
+                    <p>Forts de cette expérience enrichissante et de notre collaboration fructueuse, nous avons décidé en 2023 de franchir le pas et de transformer notre passion en une véritable entreprise. C'est ainsi qu'AgenceDigitale a vu le jour, avec pour ambition d'apporter un regard frais et innovant à chaque projet.</p>
+                    <p>Aujourd'hui, notre jeunesse et notre enthousiasme, combinés à notre expertise technique et notre créativité, font de nous une agence unique, capable de répondre aux défis digitaux les plus complexes avec une approche moderne et dynamique.</p>
+                </div>
+
+                <h2>Notre Mission</h2>
+                <p>Chez AgenceDigitale, notre mission est d'accompagner les entreprises dans leur transformation digitale en leur offrant des solutions innovantes, personnalisées et performantes.</p>
+                
+                <h2>Nos Valeurs</h2>
+                <ul>
+                    <li>Innovation : Nous sommes constamment à l'affût des dernières tendances et technologies.</li>
+                    <li>Excellence : Nous visons l'excellence dans chaque projet que nous entreprenons.</li>
+                    <li>Collaboration : Nous croyons en la force du travail d'équipe et de la co-création avec nos clients.</li>
+                    <li>Intégrité : Nous agissons avec honnêteté et transparence dans toutes nos interactions.</li>
+                </ul>
+
+                <h2>Nos Expertises</h2>
+                <div class="expertise-container">
+                    <div class="expertise-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Développement Web</h3>
+                        <p>Sites responsive, applications web complexes, e-commerce</p>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Design Graphique</h3>
+                        <p>Identité visuelle, UX/UI design, supports marketing</p>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-cubes"></i>
+                        <h3>Montage 3D</h3>
+                        <p>Modélisation 3D, animations, rendus photoréalistes</p>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Marketing Digital</h3>
+                        <p>SEO, publicité en ligne, stratégie de contenu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta-section">
+            <div class="container">
+                <h2>Prêt à transformer votre présence digitale ?</h2>
+                <p>Contactez-nous dès aujourd'hui pour discuter de votre projet</p>
+                <a href="#contact" class="cta-button">Commencer maintenant</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platinium</h
+                    <p>Votre partenaire pour une transformation digitale réussie.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/about.html">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contactez-nous</h3>
+                    <p>Email: contact@agencedigitale.com</p>
+                    <p>Téléphone: +33 1 23 45 67 89</p>
+                    <p>Adresse: 123 Rue du Digital, 75001 Paris</p>
+                </div>
+            </div>
+            <p>&copy; 2023 AgenceDigitale. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <div class="contact-buttons">
+        <a href="mailto:contact@agencedigitale.com" class="contact-button" title="Envoyer un email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://wa.me/22665615560" class="contact-button" target="_blank" rel="noopener noreferrer" title="Contacter sur WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+        });
+
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+</body>
+</html>

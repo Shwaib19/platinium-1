@@ -1,0 +1,679 @@
+<html><head><title>Nos Services - AgenceDigitale</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez nos services de création de sites web, conception graphique, marketing digital, SEO, SMO, publicité en ligne, montage vidéo et 3D.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #E74C3C;
+            --accent-color: #ECF0F1;
+            --text-color: #333;
+            --light-text: #FFF;
+            --background-color: #F5F5F5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        #logo-image {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        #logo-text {
+            display: inline-block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--light-text);
+            cursor: pointer;
+        }
+
+        .services {
+            padding-top: 100px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .services-column {
+            flex: 1 1 calc(50% - 20px);
+            min-width: 300px;
+        }
+
+        .column-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-details {
+            margin-top: 20px;
+        }
+
+        .service-item {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .service-item i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-item ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .service-item ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-item ul li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        .highlight {
+            border: 2px solid var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 20px 0;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .services-column {
+                flex: 1 1 100%;
+            }
+
+            .pricing-column {
+                flex: 1 1 100%;
+            }
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 50px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1 1 300px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+        }
+
+        .free-tag {
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .pricing-cards {
+            margin-top: 50px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pricing-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: calc(33.333% - 20px);
+            min-width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .pricing-card .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .pricing-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .pricing-card ul li {
+            margin-bottom: 10px;
+        }
+
+        .contact-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #c0392b;
+            transform: scale(1.1);
+        }
+
+        .contact-button i {
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card {
+                width: calc(50% - 20px);
+            }
+
+            .contact-buttons {
+                bottom: 10px;
+                left: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-card {
+                width: 100%;
+            }
+        }
+
+        .active {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="AgenceDigitale Logo" id="logo-image">
+                <span id="logo-text">Platinium services</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="service.html" class="active">Services</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="services">
+            <div class="container">
+                <h1 class="section-title">Nos Services</h1>
+                <p class="section-description">Chez AgenceDigitale, nous offrons une gamme complète de services digitaux pour propulser votre entreprise vers de nouveaux sommets. De la création de sites web à la conception graphique, en passant par le marketing digital, nous avons les solutions pour transformer votre présence en ligne.</p>
+                <div class="services-container">
+                    <div class="services-column design">
+                        <h2 class="column-title">Design</h2>
+                        <div class="service-details">
+                            <div class="service-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <h3>Création de Sites Web</h3>
+                                <p>Nous concevons et développons des sites web performants, esthétiques et adaptés à vos besoins spécifiques.</p>
+                                <ul>
+                                    <li>Sites vitrines et e-commerce</li>
+                                    <li>Design responsive pour tous les appareils</li>
+                                    <li>Intégration de CMS (WordPress, Shopify, etc.)</li>
+                                    <li>Optimisation pour les moteurs de recherche</li>
+                                </ul>
+                            </div>
+                            <div class="service-item highlight">
+                                <i class="fas fa-palette"></i>
+                                <h3>Conception Graphique</h3>
+                                <p>Notre équipe de designers talentueux crée des visuels uniques et impactants pour renforcer votre identité de marque.</p>
+                                <ul>
+                                    <li>Création de logos et chartes graphiques</li>
+                                    <li>Design d'interfaces utilisateur (UI) et d'expérience utilisateur (UX)</li>
+                                    <li>Conception de brochures, flyers et supports print</li>
+                                    <li>Création de visuels pour les réseaux sociaux</li>
+                                    <li>Infographies et animations</li>
+                                </ul>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-film"></i>
+                                <h3>Montage Vidéo et 3D</h3>
+                                <p>Nous offrons des services de montage vidéo professionnel et de création 3D pour donner vie à vos idées.</p>
+                                <ul>
+                                    <li>Montage et post-production vidéo</li>
+                                    <li>Création d'animations 2D et 3D</li>
+                                    <li>Modélisation et rendu 3D</li>
+                                    <li>Motion design</li>
+                                    <li>Effets spéciaux et VFX</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services-column marketing">
+                        <h2 class="column-title">Marketing</h2>
+                        <div class="service-details">
+                            <div class="service-item highlight">
+                                <i class="fas fa-clipboard-check"></i>
+                                <h3>Audit et Conseil <span class="free-tag">Gratuit</span></h3>
+                                <p>Nous offrons un audit gratuit de votre présence en ligne et des conseils personnalisés pour optimiser votre stratégie digitale.</p>
+                                <ul>
+                                    <li>Analyse de votre site web et présence sur les réseaux sociaux</li>
+                                    <li>Évaluation de votre stratégie SEO et marketing digital</li>
+                                    <li>Recommandations personnalisées pour améliorer vos performances</li>
+                                    <li>Consultation initiale sans engagement</li>
+                                </ul>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-chart-line"></i>
+                                <h3>Marketing Digital</h3>
+                                <p>Nous élaborons des stratégies de marketing digital sur mesure pour accroître votre visibilité et générer plus de leads.</p>
+                                <ul>
+                                    <li>Référencement naturel (SEO)</li>
+                                    <li>Campagnes de publicité en ligne (SEA, Social Ads)</li>
+                                    <li>Marketing de contenu</li>
+                                    <li>Email marketing</li>
+                                </ul>
+                            </div>
+                            <div class="service-item">
+                                <i class="fab fa-facebook"></i>
+                                <h3>Gestion des Réseaux Sociaux</h3>
+                                <p>Maximisez votre engagement et votre visibilité sur les réseaux sociaux grâce à notre expertise en gestion de communauté.</p>
+                                <ul>
+                                    <li>Création et optimisation de profils</li>
+                                    <li>Planification et création de contenu engageant</li>
+                                    <li>Gestion des interactions et réponses aux commentaires</li>
+                                    <li>Analyse des performances et rapports mensuels</li>
+                                </ul>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-rocket"></i>
+                                <h3>Services de Boostage</h3>
+                                <p>Nous proposons des solutions de boostage pour amplifier rapidement votre présence en ligne et vos performances digitales.</p>
+                                <ul>
+                                    <li>Boost de publications sur les réseaux sociaux</li>
+                                    <li>Campagnes publicitaires ciblées</li>
+                                    <li>Optimisation des conversions</li>
+                                    <li>Analyse et rapports de performance</li>
+                                </ul>
+                            </div>
+                            <div class="service-item">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <h3>Formations en Marketing Digital</h3>
+                                <p>Nous organisons régulièrement des formations pour vous aider à maîtriser les aspects essentiels du marketing digital.</p>
+                                <ul>
+                                    <li>Ateliers pratiques sur les stratégies digitales</li>
+                                    <li>Formations sur les outils de marketing digital</li>
+                                    <li>Séminaires sur les dernières tendances du secteur</li>
+                                    <li>Sessions personnalisées pour votre équipe</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="pricing-cards">
+                    <h2 class="section-title">Nos Tarifs</h2>
+                    <div class="cards-container">
+                        <div class="pricing-card">
+                            <h3>Création de site web</h3>
+                            <p class="price">À partir de 1500€</p>
+                            <ul>
+                                <li>Design personnalisé</li>
+                                <li>Responsive</li>
+                                <li>Optimisation SEO</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>Conception graphique</h3>
+                            <p class="price">À partir de 500€</p>
+                            <ul>
+                                <li>Logo</li>
+                                <li>Charte graphique</li>
+                                <li>Supports print</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>Montage Vidéo et 3D</h3>
+                            <p class="price">À partir de 800€/projet</p>
+                            <ul>
+                                <li>Montage vidéo</li>
+                                <li>Animations 2D/3D</li>
+                                <li>Effets spéciaux</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>Marketing digital</h3>
+                            <p class="price">À partir de 800€/mois</p>
+                            <ul>
+                                <li>SEO</li>
+                                <li>Campagnes publicitaires</li>
+                                <li>Analyse et rapports</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>Gestion réseaux sociaux</h3>
+                            <p class="price">À partir de 600€/mois</p>
+                            <ul>
+                                <li>Création de contenu</li>
+                                <li>Gestion de communauté</li>
+                                <li>Analyses mensuelles</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>Services de boostage</h3>
+                            <p class="price">À partir de 300€/campagne</p>
+                            <ul>
+                                <li>Boost de publications</li>
+                                <li>Campagnes ciblées</li>
+                                <li>Optimisation des conversions</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>Formations marketing digital</h3>
+                            <p class="price">À partir de 400€/session</p>
+                            <ul>
+                                <li>Ateliers pratiques</li>
+                                <li>Formations personnalisées</li>
+                                <li>Séminaires tendances</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Platinium</h
+                    <p>Votre partenaire pour une transformation digitale réussie.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contactez-nous</h3>
+                    <p>Email: contact@agencedigitale.com</p>
+                    <p>Téléphone: +33 1 23 45 67 89</p>
+                    <p>Adresse: 123 Rue du Digital, 75001 Paris</p>
+                </div>
+            </div>
+            <p>&copy; 2023 AgenceDigitale. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <div class="contact-buttons">
+        <a href="mailto:platiniumservices@gmail.com" class="contact-button" title="Envoyer un email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://wa.me/22665615560" class="contact-button" target="_blank" rel="noopener noreferrer" title="Contacter sur WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <a href="#" class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    <script>
+        const scrollToTopButton = document.getElementById('scrollToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopButton.classList.add('show');
+            } else {
+                scrollToTopButton.classList.remove('show');
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            
+            pricingCards.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                    card.style.backgroundColor = '#f8f8f8';
+                });
+                
+                card.addEventListener('mouseout', () => {
+                    card.style.backgroundColor = '#fff';
+                });
+            });
+
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+
+            const contactButtons = document.querySelectorAll('.contact-button');
+    
+            contactButtons.forEach(button => {
+                button.addEventListener('mouseover', () => {
+                    button.style.transform = 'scale(1.1)';
+                });
+                
+                button.addEventListener('mouseout', () => {
+                    button.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,705 @@
+<html><head><title>Platinium - Transformez votre présence en ligne</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AgenceDigitale: Votre partenaire stratégique pour le marketing digital. Expertise en SEO, SMO, création de contenu et publicité en ligne.">
+<style>
+  :root {
+    --primary-color: #2C3E50;
+    --secondary-color: #E74C3C;
+    --accent-color: #ECF0F1;
+    --text-color: #333;
+    --light-text: #FFF;
+    --background-color: #F5F5F5;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--light-text);
+    text-decoration: none;
+  }
+
+  #logo-image {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  #logo-text {
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin-left: 30px;
+  }
+
+  .nav-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--secondary-color);
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-text);
+    margin: 5px 0;
+  }
+
+  .hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: var(--light-text);
+    text-align: center;
+    padding-top: 80px;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+  }
+
+  .hero h1 span {
+    border-right: 0.1em solid var(--secondary-color);
+    animation: blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--secondary-color) }
+  }
+
+  .hero a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .hero a:hover {
+    background-color: #c0392b;
+  }
+
+  .services {
+    padding: 100px 0;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+  }
+
+  .service-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .about {
+    background-color: var(--accent-color);
+    padding: 100px 0;
+  }
+
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .about-text {
+    flex: 1;
+  }
+
+  .about-image {
+    flex: 1;
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .portfolio {
+    padding: 100px 0;
+    background-color: var(--accent-color);
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover img {
+    transform: scale(1.1);
+  }
+
+  .portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(44, 62, 80, 0.8);
+    color: var(--light-text);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+  }
+
+  .portfolio-overlay h3 {
+    margin-bottom: 10px;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #modalImage {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+  }
+
+  .footer-section h3 {
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+  }
+
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--secondary-color);
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .social-icons a {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: var(--secondary-color);
+  }
+
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .scroll-to-top.show {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-content {
+      flex-direction: column;
+    }
+
+    .about-image {
+      order: -1;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-section {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--light-text);
+      text-decoration: none;
+  }
+
+    #logo-image {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+  .active {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="AgenceDigitale Logo" id="logo-image">
+                <span id="logo-text">Platinium services</span>
+      </a>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1><span id="hero-text"></span></h1>
+        <a href="Contact.html" class="btn">Commencez votre transformation</a>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <h2 class="section-title">Nos Services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Audit et Conseil</h3>
+            <p>Analyse approfondie de votre présence en ligne et recommandations stratégiques pour optimiser votre impact digital.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-palette"></i>
+            <h3>Services Graphiques</h3>
+            <p>Création de vidéos captivantes, animations de logos dynamiques, affiches percutantes et visuels attrayants pour renforcer votre image de marque.</p>
+          </div>
+          <div class="service-card">
+            <i class="fab fa-facebook"></i>
+            <h3>Gestion des Réseaux Sociaux</h3>
+            <p>Optimisation et gestion de vos comptes Facebook, Instagram et LinkedIn pour maximiser votre engagement et votre visibilité.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-ad"></i>
+            <h3>Publicité en Ligne</h3>
+            <p>Campagnes publicitaires ciblées sur les réseaux sociaux et les moteurs de recherche pour atteindre votre audience idéale.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2 class="section-title">À Propos de Nous</h2>
+            <p>Platinium est née de la passion pour l'innovation et l'excellence dans le marketing digital. Depuis notre création, nous aidons les entreprises à se démarquer dans l'espace numérique concurrentiel d'aujourd'hui.</p>
+            <p>Notre équipe d'experts en marketing, designers créatifs et développeurs talentueux travaillent en synergie pour offrir des solutions sur mesure qui répondent aux besoins uniques de chaque client. Nous croyons en la puissance de la stratégie data-driven combinée à la créativité pour générer des résultats exceptionnels.</p>
+          </div>
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80" alt="Notre équipe en action" width="600" height="400">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Platinium</h3>
+          <p>Votre partenaire pour une transformation digitale réussie.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Liens Rapides</h3>
+          <ul class="footer-links">
+            <li><a href="service.html">Services</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contactez-nous</h3>
+          <p>Email: platiniumservices@gmail.com</p>
+          <p>Téléphone: +226 65 61 55 60</p>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://facebook.com/agencedigitale" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/agencedigitale" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/company/agencedigitale" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com/agencedigitale" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2024 Platinium-services. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <a href="#" class="scroll-to-top" id="scrollToTop">
+    <i class="fas fa-chevron-up"></i>
+  </a>
+
+  <script>
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Typewriter effect for hero text
+    const heroTextElement = document.getElementById('hero-text');
+    const heroTexts = [
+      "Transformez Votre Présence Digitale",
+      "AgenceDigitale : Votre partenaire stratégique pour conquérir le monde numérique.",
+      "Propulsez votre entreprise vers de nouveaux sommets avec nos solutions innovantes.",
+      "Expertise en marketing digital pour transformer votre présence en ligne."
+    ];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 50;
+
+    function typeHeroText() {
+      const currentText = heroTexts[textIndex];
+
+      if (isDeleting) {
+        heroTextElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 30;
+      } else {
+        heroTextElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 50;
+      }
+
+      if (!isDeleting && charIndex === currentText.length) {
+        isDeleting = true;
+        typingSpeed = 3000; // Wait for 3 seconds before deleting
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % heroTexts.length;
+        typingSpeed = 500; // Wait for 0.5 seconds before typing the next text
+      }
+
+      setTimeout(typeHeroText, typingSpeed);
+    }
+
+    // Start the typewriter effect when the page loads
+    window.addEventListener('load', typeHeroText);
+
+    // Scroll-to-top button functionality
+    const scrollToTopButton = document.getElementById('scrollToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollToTopButton.classList.add('show');
+      } else {
+        scrollToTopButton.classList.remove('show');
+      }
+    });
+
+    scrollToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Portfolio modal functionality
+    const modal = document.getElementById('portfolioModal');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalDescription = document.getElementById('modalDescription');
+    const closeModal = document.querySelector('.close');
+
+    const portfolioData = [
+      {
+        id: 1,
+        title: "Refonte Site Web pour TechCorp",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+        description: "Nous avons entièrement refondu le site web de TechCorp, améliorant son design, son UX et ses performances. Le nouveau site a augmenté le taux de conversion de 150%."
+      },
+      {
+        id: 2,
+        title: "Campagne Réseaux Sociaux pour FashionBrand",
+        image: "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+        description: "Notre campagne sur les réseaux sociaux pour FashionBrand a généré plus de 1 million d'impressions et augmenté les ventes en ligne de 200% en seulement 3 mois."
+      },
+      {
+        id: 3,
+        title: "Application Mobile E-commerce pour ShopNow",
+        image: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+        description: "Nous avons conçu et développé une application mobile e-commerce pour ShopNow, qui a été téléchargée plus de 500 000 fois et a augmenté les revenus mobiles de 300%."
+      },
+      {
+        id: 4,
+        title: "Stratégie SEO pour LocalBiz",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
+        description: "Notre stratégie SEO pour LocalBiz a propulsé leur site web en première page des résultats de recherche pour plus de 100 mots-clés cibles, augmentant le trafic organique de 400%."
+      }
+    ];
+
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const id = parseInt(item.getAttribute('data-id'));
+        const portfolioItem = portfolioData.find(item => item.id === id);
+        
+        modalTitle.textContent = portfolioItem.title;
+        modalImage.src = portfolioItem.image;
+        modalImage.alt = portfolioItem.title;
+        modalDescription.textContent = portfolioItem.description;
+        
+        modal.style.display = 'block';
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
