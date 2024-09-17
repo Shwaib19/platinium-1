@@ -1,4 +1,4 @@
-<html><head><title>À propos - AgenceDigitale</title>
+<html><head><title>À propos - Platinium-services</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Découvrez l'histoire, les valeurs et l'équipe derrière AgenceDigitale, votre partenaire en transformation digitale.">
@@ -78,62 +78,54 @@
         .nav-links {
             display: flex;
             list-style: none;
-        }
-
-        .nav-links li {
+          }
+        
+          .nav-links li {
             margin-left: 30px;
-        }
-
-        .nav-links a {
+          }
+        
+          .nav-links a {
             color: var(--light-text);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
+          }
+        
+          .nav-links a:hover {
             color: var(--secondary-color);
-        }
-
-        .active {
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-
-        .menu-toggle {
+          }
+        
+          .hamburger {
             display: none;
-            font-size: 1.5rem;
-            color: var(--light-text);
             cursor: pointer;
-        }
-
-        .hero-section {
-            background-image: url('https://source.unsplash.com/random/1600x900/?digital,agency');
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
+            z-index: 1000;
+          }
+        
+          .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--light-text);
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+          }
+        
+          .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1556155092-490a1ba16284?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            min-height: 85vh;
+            height: auto;
             display: flex;
             align-items: center;
-            justify-content: center;
             color: var(--light-text);
             text-align: center;
-            position: relative;
-        }
+            padding: 100px 0 50px;
+          }
+        
+          .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+          }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
 
         .hero-title {
             font-size: 3rem;
@@ -143,6 +135,7 @@
         .hero-tagline {
             font-size: 1.5rem;
         }
+
 
         .about-section {
             padding: 50px 0;
@@ -317,27 +310,27 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                flex-direction: column;
                 position: absolute;
-                top: 80px;
+                top: 100%;
                 left: 0;
                 width: 100%;
                 background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
                 padding: 20px 0;
-            }
-
-            .nav-links.show {
+              }
+          
+              .nav-links.active {
                 display: flex;
-            }
-
-            .nav-links li {
+              }
+          
+              .nav-links li {
                 margin: 10px 0;
-            }
-
-            .menu-toggle {
+              }
+          
+              .hamburger {
                 display: block;
-            }
-
+              }
             .expertise-item {
                 flex-basis: 100%;
             }
@@ -347,25 +340,30 @@
 <body>
     <header>
         <nav class="container">
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <a href="index.html" class="logo">
-                <img src="img/logo.png" alt="AgenceDigitale Logo" id="logo-image">
-                <span id="logo-text">Platinium services</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="apropos.html" class="active">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+          <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="Platinium logo" height="60">
+            Platinium
+          </a>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
     <main>
-        <section class="hero-section">
+
+
+
+        <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">À propos d'AgenceDigitale</h1>
+                <h1 class="hero-title">À propos de Platinium</h1>
                 <p class="hero-tagline">Votre partenaire de confiance pour tous vos projets digitaux</p>
             </div>
         </section>
@@ -373,14 +371,14 @@
             <div class="container">
                 <h2>Notre Histoire</h2>
                 <div class="history-content">
-                    <p>AgenceDigitale est née de la passion et de l'ambition d'un groupe d'étudiants talentueux. Notre parcours a débuté en 2022 lorsque nous nous sommes rencontrés à l'université, partageant un intérêt commun pour le digital et l'innovation.</p>
+                    <p>Platinium est née de la passion et de l'ambition d'un groupe d'étudiants talentueux. Notre parcours a débuté en 2022 lorsque nous nous sommes rencontrés à l'université, partageant un intérêt commun pour le digital et l'innovation.</p>
                     <p>Pendant un an, nous avons collaboré sur divers projets universitaires, affinant nos compétences et découvrant notre synergie collective. Cette période nous a permis de développer une expertise variée dans les domaines du développement web, du design graphique, du montage 3D et du marketing digital.</p>
-                    <p>Forts de cette expérience enrichissante et de notre collaboration fructueuse, nous avons décidé en 2023 de franchir le pas et de transformer notre passion en une véritable entreprise. C'est ainsi qu'AgenceDigitale a vu le jour, avec pour ambition d'apporter un regard frais et innovant à chaque projet.</p>
+                    <p>Forts de cette expérience enrichissante et de notre collaboration fructueuse, nous avons décidé en 2024 de franchir le pas et de transformer notre passion en une véritable entreprise. C'est ainsi qu'AgenceDigitale a vu le jour, avec pour ambition d'apporter un regard frais et innovant à chaque projet.</p>
                     <p>Aujourd'hui, notre jeunesse et notre enthousiasme, combinés à notre expertise technique et notre créativité, font de nous une agence unique, capable de répondre aux défis digitaux les plus complexes avec une approche moderne et dynamique.</p>
                 </div>
 
                 <h2>Notre Mission</h2>
-                <p>Chez AgenceDigitale, notre mission est d'accompagner les entreprises dans leur transformation digitale en leur offrant des solutions innovantes, personnalisées et performantes.</p>
+                <p>Chez Platinium, notre mission est d'accompagner les entreprises dans leur transformation digitale en leur offrant des solutions innovantes, personnalisées et performantes.</p>
                 
                 <h2>Nos Valeurs</h2>
                 <ul>
@@ -433,19 +431,19 @@
                 <div class="footer-section">
                     <h3>Liens Rapides</h3>
                     <ul class="footer-links">
-                        <li><a href="/services.html">Services</a></li>
-                        <li><a href="/about.html">À propos</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="apropos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contactez-nous</h3>
-                    <p>Email: contact@agencedigitale.com</p>
-                    <p>Téléphone: +33 1 23 45 67 89</p>
+                    <p>Email: platiniumservices@gmail.com</p>
+                    <p>Téléphone: +226 65 61 55 60</p>
                     <p>Adresse: 123 Rue du Digital, 75001 Paris</p>
                 </div>
             </div>
-            <p>&copy; 2023 AgenceDigitale. Tous droits réservés.</p>
+            <p>&copy; 2024 Platinium-services. Tous droits réservés.</p>
         </div>
     </footer>
     <div class="contact-buttons">
@@ -457,14 +455,18 @@
         </a>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('show');
-            });
-        });
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
 
         var swiper = new Swiper('.swiper-container', {
             effect: 'coverflow',
