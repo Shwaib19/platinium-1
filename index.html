@@ -283,7 +283,47 @@
     opacity: 1;
   }
 
+
+  .contact-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+.contact-button i {
+    line-height: 1;
+}
+
+
   @media (max-width: 768px) {
+
+    .contact-buttons {
+      bottom: 10px;
+      left: 10px;
+  }
+
     .nav-links {
       display: none;
       position: absolute;
@@ -459,6 +499,14 @@
     </div>
 </footer>
 
+<div class="contact-buttons">
+  <a href="mailto:shwaibkabore19@gmail.com" class="contact-button" title="Envoyer un email">
+      <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://wa.me/22665615560" class="contact-button" target="_blank" rel="noopener noreferrer" title="Contacter sur WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
   <a href="#" class="scroll-to-top" id="scrollToTop">
     <i class="fas fa-chevron-up"></i>
   </a>
@@ -491,6 +539,18 @@
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    const contactButtons = document.querySelectorAll('.contact-button');
+    
+            contactButtons.forEach(button => {
+                button.addEventListener('mouseover', () => {
+                    button.style.transform = 'scale(1.1)';
+                });
+                
+                button.addEventListener('mouseout', () => {
+                    button.style.transform = 'scale(1)';
+                });
+            });
   </script>
 </body>
 </html>
